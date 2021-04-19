@@ -1,4 +1,5 @@
 import { Hill } from "./hill.js";
+import { Sun } from "./sun.js";
 
 class App {
     constructor() {
@@ -9,10 +10,12 @@ class App {
         this.ctx = this.canvas.getContext("2d");
         document.body.appendChild(this.canvas);
 
+        this.sun = new Sun();
+
         this.hills = [
-            new Hill("#ff4674", 0.2, 12),
-            new Hill("#ffaaa7", 0.5, 8),
-            new Hill("#ffd3b4", 1.4, 6),
+            new Hill("#2A120A", 0.1, 5),
+            new Hill("#191007", 0.3, 4),
+            new Hill("#181907", 0.8, 3),
         ];
         /**
          * 스크린 사이즈를 가져오기 위해 resize 이벤트를 설정
@@ -35,6 +38,8 @@ class App {
         this.canvas.height = this.stageHeight * 2;
         this.ctx.scale(2, 2);
 
+        this.sun.resize(this.stageWidth, this.stageHeight);
+
         for (let i = 0; i < this.hills.length; i++) {
             this.hills[i].resize(this.stageWidth, this.stageHeight);
         }
@@ -45,6 +50,9 @@ class App {
          * canvas를 깨끗하게 지워주는 코드를 추가
          */
         this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
+
+        this.sun.draw(this.ctx, t);
+        this.sun.drawFace(this.ctx);
 
         let dots;
         for (let i = 0; i < this.hills.length; i++) {
