@@ -5,4 +5,27 @@ const canvas = document.querySelector("#canvas"),
 
 function windowToCanvas(canvas, x, y) {
   let bbox = canvas.getBoundingClientRect();
+  return {
+    x: x - bbox.left * (canvas.width / bbox.width),
+    y: y - bbox.top * (canvas.height / bbox.height),
+  };
 }
+
+function drawBackground() {
+  const VERTICAL_LINE_SPACING = 12;
+  let i = context.canvas.height;
+
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.strokeStyle = "lightgray";
+  context.lineWidth = 0.5;
+
+  while (i > VERTICAL_LINE_SPACING * 4) {
+    context.beginPath();
+    context.moveTo(0, i);
+    context.lineTo(context.canvas.width, i);
+    context.stroke();
+    i -= VERTICAL_LINE_SPACING;
+  }
+}
+
+drawBackground();
