@@ -66,7 +66,7 @@ canvas.onmousemove = function (e) {
   drawGuidelines(loc.x, loc.y);
 };
 
-spritesheet.src = "working-sprite-sheet.png";
+spritesheet.src = "./img/working-sprite-sheet.png";
 spritesheet.onload = function (e) {
   drawSpritesheet();
 };
