@@ -28,4 +28,24 @@ function drawBackground() {
   }
 }
 
+function drawSpritesheet() {
+  context.drawImage(spritesheet, 0, 0);
+}
+
+function updateReadout(x, y) {
+  readOut.innerText = "(" + x.toFixed(0) + ", " + y.toFixed(0) + ")";
+}
+
+function drawGuidelines(x, y) {
+  context.strokeStyle = "rgba(0,0,230,0.8)";
+}
+
+canvas.onmousemove = function (e) {
+  const loc = windowToCanvas(canvas, e.clientX, e.clientY);
+
+  drawBackground();
+  drawSpritesheet();
+  updateReadout(loc.x, loc.y);
+};
+
 drawBackground();
