@@ -38,6 +38,23 @@ function updateReadout(x, y) {
 
 function drawGuidelines(x, y) {
   context.strokeStyle = "rgba(0,0,230,0.8)";
+  context.lineWidth = 0.5;
+  drawVerticalLine(x);
+  drawHorizontalLine(y);
+}
+
+function drawVerticalLine(x) {
+  context.beginPath();
+  context.moveTo(x + 0.5, 0);
+  context.lineTo(x + 0.5, context.canvas.height);
+  context.stroke();
+}
+
+function drawHorizontalLine(y) {
+  context.beginPath();
+  context.moveTo(0, y + 0.5);
+  context.lineTo(context.canvas.width, y + 0.5);
+  context.stroke();
 }
 
 canvas.onmousemove = function (e) {
@@ -46,6 +63,12 @@ canvas.onmousemove = function (e) {
   drawBackground();
   drawSpritesheet();
   updateReadout(loc.x, loc.y);
+  drawGuidelines(loc.x, loc.y);
+};
+
+spritesheet.src = "running-sprite-sheet.png";
+spritesheet.onload = function (e) {
+  drawSpritesheet();
 };
 
 drawBackground();
