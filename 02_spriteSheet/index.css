@@ -1,0 +1,18 @@
+body {
+  background: #dddddd;
+}
+
+#canvas {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  margin: 20px;
+  background-color: #ffffff;
+  border: thin inset rgba(100, 150, 230, 0.5);
+  cursor: pointer;
+}
+
+#read-out {
+  margin: 10px 0 0 15px;
+  color: #00228b;
+}
