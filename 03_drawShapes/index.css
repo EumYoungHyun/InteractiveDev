@@ -5,4 +5,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    font-size: 14px;
+    font-family: sans-serif;
+    color: #000;
+    background-color: #eee;
+
+    margin: 0;
+    padding: 30px;
+}
+
+#canvas {
+    background-color: rgb(253, 248, 232);
+    border: 5px solid #333;
 }
