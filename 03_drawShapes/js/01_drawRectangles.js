@@ -38,18 +38,18 @@ document.addEventListener("DOMContentLoaded", function () {
     /*----------------------*/
 
     // draw a rectangle (fill/ transparent)
-    ctx.beginPath();
-    ctx.rect(250, 250, 100, 100); // x:250, y:250, w:100, h:100
-    ctx.fillStyle = "rgba(251, 192, 45, 0.75)"; // fill color
-    ctx.fill(); // fill previous shapes
+    // ctx.beginPath();
+    // ctx.rect(250, 250, 100, 100); // x:250, y:250, w:100, h:100
+    // ctx.fillStyle = "rgba(251, 192, 45, 0.75)"; // fill color
+    // ctx.fill(); // fill previous shapes
 
     /*----------------------*/
 
     // draw a rectangle (stroke/ transparent)
-    ctx.beginPath();
-    ctx.rect(550, 250, 100, 100); // x:550, y:250, w:100, h:100
-    ctx.strokeStyle = "rgb(216, 67, 21)"; // fill color
-    ctx.stroke(); // stroke previous shapes
+    // ctx.beginPath();
+    // ctx.rect(550, 250, 100, 100); // x:550, y:250, w:100, h:100
+    // ctx.strokeStyle = "rgb(216, 67, 21)"; // fill color
+    // ctx.stroke(); // stroke previous shapes
 
     // What if i want to remove a shape from the canvas?
     // canvas is just a single raster image
@@ -58,4 +58,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Luckily, canvas API provides me some simple methods
     // to removes pixels from the canvas entirely
+    // and if i want to remove rectangular shape
+    // i can use clearRect() function
+
+    // here's some example
+
+    /*----------------------*/
+
+    // clear a rectangle (clear/transparent)
+    ctx.beginPath();
+    ctx.clearRect(150, 150, 100, 100);
+
+    /*----------------------*/
+
+    // draw a rectangle
+    ctx.fillStyle = "rgb(216, 67, 21)";
+    ctx.fillRect(450, 150, 100, 100); // x: 450, y:150, w:100, h:100
 });
