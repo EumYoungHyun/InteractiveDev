@@ -41,11 +41,22 @@ document.addEventListener("DOMContentLoaded", function () {
     ctx.fill(); // path is close so, i can use fill method
 
     // draw triangle
-    ctx.fillStyle = "red"; // fill color
+    ctx.fillStyle = "brown"; // fill color
     ctx.beginPath();
     ctx.moveTo(600, 100); // move pen to x:600, y:100
-    ctx.lineTo(550, 200); // draw diagonal from top to left
-    ctx.lineTo(650, 200); // draw diagonal from left to right
+    ctx.lineTo(550, 175); // draw diagonal from top to left
+    ctx.lineTo(650, 175); // draw diagonal from left to right
     ctx.closePath(); // draw diagonal from right to up
     ctx.fill();
+
+    // draw another triangle
+    ctx.lineWidth = 10; // line width in pixels
+    ctx.lineCap = "round"; // style end of a line
+    ctx.lineJoin = "bevel"; // style edge
+    ctx.beginPath();
+    ctx.moveTo(600, 200);
+    ctx.lineTo(550, 275);
+    ctx.lineTo(650, 275);
+    ctx.closePath();
+    ctx.stroke();
 });
