@@ -36,5 +36,16 @@ document.addEventListener("DOMContentLoaded", function () {
     ctx.lineTo(300, 300); // draw right side line
     ctx.lineTo(100, 300); // draw down side line
     ctx.lineTo(100, 100); // draw left side line
+    // or i can use  ctx.closePath();
+    // this means the same as ctx.lineTo(100, 100);
     ctx.fill(); // path is close so, i can use fill method
+
+    // draw triangle
+    ctx.fillStyle = "red"; // fill color
+    ctx.beginPath();
+    ctx.moveTo(600, 100); // move pen to x:600, y:100
+    ctx.lineTo(550, 200); // draw diagonal from top to left
+    ctx.lineTo(650, 200); // draw diagonal from left to right
+    ctx.closePath(); // draw diagonal from right to up
+    ctx.fill();
 });
