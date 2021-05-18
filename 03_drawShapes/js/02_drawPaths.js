@@ -54,9 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
     ctx.lineCap = "round"; // style end of a line
     ctx.lineJoin = "bevel"; // style edge
     ctx.beginPath();
-    ctx.moveTo(600, 200);
-    ctx.lineTo(550, 275);
-    ctx.lineTo(650, 275);
-    ctx.closePath();
+    ctx.moveTo(575, 225);
+    ctx.lineTo(575, 275);
+    ctx.lineTo(625, 275);
     ctx.stroke();
 });
