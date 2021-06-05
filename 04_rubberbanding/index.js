@@ -1,9 +1,9 @@
 (() => {
   const canvas = document.querySelector("#canvas"),
     context = canvas.getContext("2d"),
-    rubberbandDiv = document.querySelector("rubberbandDiv"),
-    resetButton = document.querySelector("resetButton"),
-    image = new Image(),
+    rubberbandDiv = document.querySelector("#rubberbandDiv"),
+    resetButton = document.querySelector("#resetButton");
+  let image = new Image(),
     mousedown = {},
     rubberbandRectangle = {},
     dragging = false;
@@ -24,8 +24,8 @@
   function rubberbandStretch(x, y) {
     rubberbandRectangle.left = x < mousedown.x ? x : mousedown.x;
     rubberbandRectangle.top = y < mousedown.y ? y : mousedown.y;
-    (rubberbandRectangle.width = Math.abs(x - mousedown.x)),
-      (rybberband.height = Math.abs((y = mousedown.y)));
+    rubberbandRectangle.width = Math.abs(x - mousedown.x);
+    rubberbandRectangle.height = Math.abs(y - mousedown.y);
     moveRubberbandDiv();
     resizeRubberbandDiv();
   }
@@ -81,4 +81,40 @@
   function resetRubberbandRectangle() {
     rubberbandRectangle = { top: 0, left: 0, width: 0, height: 0 };
   }
+
+  // Event Handler
+  canvas.onmousedown = function (e) {
+    let x = e.clientX,
+      y = e.clientY;
+
+    e.preventDefault();
+    rubberbandStart(x, y);
+  };
+
+  window.onmousemove = function (e) {
+    let x = e.clientX,
+      y = e.clientY;
+
+    e.preventDefault();
+
+    if (dragging) {
+      rubberbandStretch(x, y);
+    }
+  };
+
+  window.onmouseup = function (e) {
+    e.preventDefault();
+    rubberbandEnd();
+  };
+
+  image.onload = function () {
+    context.drawImage(image, 0, 0, canvas.width, canvas.height);
+  };
+
+  resetButton.onclick = function (e) {
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+    context.drawImage(image, 0, 0, canvas.width, canvas.height);
+  };
+
+  image.src = "./signiel.png";
 })();
