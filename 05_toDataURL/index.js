@@ -45,14 +45,22 @@
     hour = hour > 12 ? hour - 12 : hour;
 
     drawHand((hour + date.getMinutes() / 60) * 5, true, 0.5);
-    drawHand(date.getMinutes(), false, 0.5);
-    drawHand(date.getSeconds(), false, 0.2);
+    drawHand(date.getMinutes() + date.getSeconds() / 60, false, 0.5);
+    drawHand(date.getSeconds() + date.getMilliseconds() / 1000, false, 0.2);
   }
+
+  function drawCenter() {
+    context.beginPath();
+    context.arc(canvas.width / 2, canvas.height / 2, 2, 0, Math.PI * 2, true);
+    context.fill();
+  }
+
   function drawClock() {
     context.clearRect(0, 0, canvas.width, canvas.height);
     drawCircle();
     drawHands();
+    drawCenter();
   }
 
-  loop = setInterval(drawClock, 1000);
+  loop = setInterval(drawClock, 10);
 })();
