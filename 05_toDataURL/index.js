@@ -80,4 +80,22 @@
 
   context.font = FONT_HEIGHT + "px Arial";
   loop = setInterval(drawClock, 10);
+
+  // Event Handler
+  snapshotButton.onclick = function (e) {
+    let dataUrl;
+    if (snapshotButton.value === "Take snapshot") {
+      dataUrl = canvas.toDataURL();
+      clearInterval(loop);
+      snapshotImageElement.src = dataUrl;
+      snapshotImageElement.style.display = "inline";
+      canvas.style.display = "none";
+      snapshotButton.value = "Return to Canvas";
+    } else {
+      canvas.style.display = "inline";
+      snapshotImageElement.style.display = "none";
+      loop = setInterval(drawClock, 10);
+      snapshotButton.value = "Take snapshot";
+    }
+  };
 })();
