@@ -78,5 +78,6 @@
     drawNumerals();
   }
 
+  context.font = FONT_HEIGHT + "px Arial";
   loop = setInterval(drawClock, 10);
 })();
