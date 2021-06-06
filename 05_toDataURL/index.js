@@ -1,7 +1,6 @@
 (() => {
   const canvas = document.querySelector("#canvas"),
     context = canvas.getContext("2d"),
-    snapshotButton = document.querySelector("#snapshotButton"),
     snapshotImageElement = document.querySelector("#snapshotImageElement"),
     FONT_HEIGHT = 15,
     MARGIN = 35,
@@ -51,7 +50,7 @@
 
   function drawCenter() {
     context.beginPath();
-    context.arc(canvas.width / 2, canvas.height / 2, 2, 0, Math.PI * 2, true);
+    context.arc(canvas.width / 2, canvas.height / 2, 5, 0, Math.PI * 2, true);
     context.fill();
   }
 
@@ -70,32 +69,28 @@
       );
     });
   }
+  function updateClockImage() {
+    snapshotImageElement.src = canvas.toDataURL();
+  }
+
   function drawClock() {
     context.clearRect(0, 0, canvas.width, canvas.height);
+
+    context.save();
+
+    context.fillStyle = "rgba(255, 255, 255, 0.8)";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
     drawCircle();
     drawHands();
     drawCenter();
+
+    context.restore();
     drawNumerals();
+
+    updateClockImage();
   }
 
   context.font = FONT_HEIGHT + "px Arial";
   loop = setInterval(drawClock, 10);
-
-  // Event Handler
-  snapshotButton.onclick = function (e) {
-    let dataUrl;
-    if (snapshotButton.value === "Take snapshot") {
-      dataUrl = canvas.toDataURL();
-      clearInterval(loop);
-      snapshotImageElement.src = dataUrl;
-      snapshotImageElement.style.display = "inline";
-      canvas.style.display = "none";
-      snapshotButton.value = "Return to Canvas";
-    } else {
-      canvas.style.display = "inline";
-      snapshotImageElement.style.display = "none";
-      loop = setInterval(drawClock, 10);
-      snapshotButton.value = "Take snapshot";
-    }
-  };
 })();

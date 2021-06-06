@@ -3,11 +3,7 @@ body {
 }
 
 #canvas {
-  position: absolute;
-  left: 10px;
-  top: 1.5em;
-  margin: 20px;
-  border: thin solid #aaaaaa;
+  display: none;
 }
 
 #snapshotImageElement {
