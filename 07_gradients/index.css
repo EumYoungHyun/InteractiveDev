@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#canvas {
+  width: 60vh;
+  height: 40vh;
+  border: thin solid black;
+}
