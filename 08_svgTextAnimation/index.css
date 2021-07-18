@@ -9,6 +9,7 @@ body {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.95);
   margin: 0;
+  overflow: hidden;
 }
 
 #logo {
@@ -17,12 +18,23 @@ body {
   left: 50%;
 
   transform: translate3d(-50%, -50%, 0) rotate(-8deg);
-  animation: zoom-in 1s ease forwards;
+  animation: zoom-in 2s 4.6s ease forwards, fill 0.5s 4.2s ease forwards;
 }
 
-@keyfreames zoom-in {
+@keyframes zoom-in {
+  50% {
+    transform: translate3d(-50%, -50%, 0) scale(120%);
+  }
   100% {
-    transform: translate3d(-50%, -50%, 0) rotate(-8deg) scale(200%);
+    transform: translate3d(-50%, -50%, 0) scale(2000%);
+  }
+}
+@keyframes fill {
+  0% {
+    fill: transparent;
+  }
+  100% {
+    fill: white;
   }
 }
 
@@ -133,9 +145,6 @@ body {
 }
 
 @keyframes line-anim {
-  0% {
-    stroke-dasharray: 100;
-  }
   100% {
     stroke-dashoffset: 0;
   }
