@@ -1,157 +1,157 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.95);
-  margin: 0;
-  overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    margin: 0;
+    overflow: hidden;
 }
 
 #logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
-  transform: translate3d(-50%, -50%, 0) rotate(-8deg);
-  animation: zoom-in 2s 4.6s ease forwards, fill 0.5s 4.2s ease forwards;
+    transform: translate3d(-50%, -50%, 0) rotate(-8deg);
+    animation: zoom-in 2s 4.6s ease forwards, fill 0.5s 4.2s ease forwards;
 }
 
 @keyframes zoom-in {
-  50% {
-    transform: translate3d(-50%, -50%, 0) scale(120%);
-  }
-  56% {
-    transform: translate3d(-50%, -50%, 0) scale(120%);
-  }
-  62% {
-    transform: translate3d(-50%, -50%, 0) scale(110%);
-  }
-  100% {
-    transform: translate3d(-50%, -50%, 0) scale(2000%);
-  }
+    50% {
+        transform: translate3d(-50%, -50%, 0) scale(120%);
+    }
+    56% {
+        transform: translate3d(-50%, -50%, 0) scale(120%);
+    }
+    62% {
+        transform: translate3d(-50%, -50%, 0) scale(110%);
+    }
+    100% {
+        transform: translate3d(-50%, -50%, 0) scale(2500%);
+    }
 }
 @keyframes fill {
-  0% {
-    fill: transparent;
-  }
-  100% {
-    fill: white;
-  }
+    0% {
+        fill: transparent;
+    }
+    100% {
+        fill: white;
+    }
 }
 
 #logo path:nth-child(1) {
-  stroke-dasharray: 475.2000427246094;
-  stroke-dashoffset: 475.2000427246094;
-  animation: line-anim 2s ease forwards;
+    stroke-dasharray: 475.2000427246094;
+    stroke-dashoffset: 475.2000427246094;
+    animation: line-anim 2s ease forwards;
 }
 #logo path:nth-child(2) {
-  stroke-dasharray: 441.931884765625;
-  stroke-dashoffset: 441.931884765625;
-  animation: line-anim 2s 0.3s ease forwards;
+    stroke-dasharray: 441.931884765625;
+    stroke-dashoffset: 441.931884765625;
+    animation: line-anim 2s 0.3s ease forwards;
 }
 #logo path:nth-child(3) {
-  stroke-dasharray: 655;
-  stroke-dashoffset: 655;
-  animation: line-anim 2s 0.6s ease forwards;
+    stroke-dasharray: 655.3239135742188;
+    stroke-dashoffset: 655.3239135742188;
+    animation: line-anim 2s 0.6s ease forwards;
 }
 #logo path:nth-child(4) {
-  stroke-dasharray: 415;
-  stroke-dashoffset: 416;
-  animation: line-anim 2s 0.9s ease forwards;
+    stroke-dasharray: 415.801513671875;
+    stroke-dashoffset: 415.801513671875;
+    animation: line-anim 2s 0.9s ease forwards;
 }
 #logo path:nth-child(5) {
-  stroke-dasharray: 295;
-  stroke-dashoffset: 295;
-  animation: line-anim 2s 1.2s ease forwards;
+    stroke-dasharray: 295.03668212890625;
+    stroke-dashoffset: 295.03668212890625;
+    animation: line-anim 2s 1.2s ease forwards;
 }
 #logo path:nth-child(6) {
-  stroke-dasharray: 335;
-  stroke-dashoffset: 335;
-  animation: line-anim 2s 1.4s ease forwards;
+    stroke-dasharray: 335.1162414550781;
+    stroke-dashoffset: 335.1162414550781;
+    animation: line-anim 2s 1.4s ease forwards;
 }
 #logo path:nth-child(7) {
-  stroke-dasharray: 373;
-  stroke-dashoffset: 373;
-  animation: line-anim 2s 1.6s ease forwards;
+    stroke-dasharray: 373.6043395996094;
+    stroke-dashoffset: 373.6043395996094;
+    animation: line-anim 2s 1.6s ease forwards;
 }
 #logo path:nth-child(8) {
-  stroke-dasharray: 422;
-  stroke-dashoffset: 422;
-  animation: line-anim 2s 1.8s ease forwards;
+    stroke-dasharray: 422.2711486816406;
+    stroke-dashoffset: 422.2711486816406;
+    animation: line-anim 2s 1.8s ease forwards;
 }
 #logo path:nth-child(9) {
-  stroke-dasharray: 441.7317199707031;
-  stroke-dashoffset: 441.7317199707031;
-  animation: line-anim 2s 2s ease forwards;
+    stroke-dasharray: 441.7317199707031;
+    stroke-dashoffset: 441.7317199707031;
+    animation: line-anim 2s 2s ease forwards;
 }
 #logo path:nth-child(10) {
-  stroke-dasharray: 347.76336669921875;
-  stroke-dashoffset: 347.76336669921875;
-  animation: line-anim 2s 2.1s ease forwards;
+    stroke-dasharray: 347.76336669921875;
+    stroke-dashoffset: 347.76336669921875;
+    animation: line-anim 2s 2.1s ease forwards;
 }
 #logo path:nth-child(11) {
-  stroke-dasharray: 141.40626525878906;
-  stroke-dashoffset: 141.40626525878906;
-  animation: line-anim 2s 2.2s ease forwards;
+    stroke-dasharray: 141.40626525878906;
+    stroke-dashoffset: 141.40626525878906;
+    animation: line-anim 2s 2.2s ease forwards;
 }
 #logo path:nth-child(12) {
-  stroke-dasharray: 419.3233947753906;
-  stroke-dashoffset: 419.3233947753906;
-  animation: line-anim 2s 2.3s ease forwards;
+    stroke-dasharray: 419.3233947753906;
+    stroke-dashoffset: 419.3233947753906;
+    animation: line-anim 2s 2.3s ease forwards;
 }
 #logo path:nth-child(13) {
-  stroke-dasharray: 500;
-  stroke-dashoffset: 501;
-  animation: line-anim 2s 0.6s ease forwards;
+    stroke-dasharray: 500.01519775390625;
+    stroke-dashoffset: 500.01519775390625;
+    animation: line-anim 2s 0.6s ease forwards;
 }
 #logo path:nth-child(14) {
-  stroke-dasharray: 347;
-  stroke-dashoffset: 348;
-  animation: line-anim 2s 0.9s ease forwards;
+    stroke-dasharray: 347.7632141113281;
+    stroke-dashoffset: 347.7632141113281;
+    animation: line-anim 2s 0.9s ease forwards;
 }
 #logo path:nth-child(15) {
-  stroke-dasharray: 295.0367126464844;
-  stroke-dashoffset: 295.0367126464844;
-  animation: line-anim 2s 1.2s ease forwards;
+    stroke-dasharray: 295.0367126464844;
+    stroke-dashoffset: 295.0367126464844;
+    animation: line-anim 2s 1.2s ease forwards;
 }
 #logo path:nth-child(16) {
-  stroke-dasharray: 324.7047424316406;
-  stroke-dashoffset: 324.7047424316406;
-  animation: line-anim 2s 1.4s ease forwards;
+    stroke-dasharray: 324.7047424316406;
+    stroke-dashoffset: 324.7047424316406;
+    animation: line-anim 2s 1.4s ease forwards;
 }
 #logo path:nth-child(17) {
-  stroke-dasharray: 340.5496826171875;
-  stroke-dashoffset: 340.5496826171875;
-  animation: line-anim 2s 1.6s ease forwards;
+    stroke-dasharray: 340.5496826171875;
+    stroke-dashoffset: 340.5496826171875;
+    animation: line-anim 2s 1.6s ease forwards;
 }
 #logo path:nth-child(18) {
-  stroke-dasharray: 347.76336669921875;
-  stroke-dashoffset: 347.76336669921875;
-  animation: line-anim 2s 1.8s ease forwards;
+    stroke-dasharray: 347.76336669921875;
+    stroke-dashoffset: 347.76336669921875;
+    animation: line-anim 2s 1.8s ease forwards;
 }
 #logo path:nth-child(19) {
-  stroke-dasharray: 277.0560302734375;
-  stroke-dashoffset: 277.0560302734375;
-  animation: line-anim 2s 2s ease forwards;
+    stroke-dasharray: 277.0560302734375;
+    stroke-dashoffset: 277.0560302734375;
+    animation: line-anim 2s 2s ease forwards;
 }
 #logo path:nth-child(20) {
-  stroke-dasharray: 335.11669921875;
-  stroke-dashoffset: 335.11669921875;
-  animation: line-anim 2s 2.1s ease forwards;
+    stroke-dasharray: 335.11669921875;
+    stroke-dashoffset: 335.11669921875;
+    animation: line-anim 2s 2.1s ease forwards;
 }
 #logo path:nth-child(21) {
-  stroke-dasharray: 347;
-  stroke-dashoffset: 348;
-  animation: line-anim 2s 2.2s ease forwards;
+    stroke-dasharray: 347.76336669921875;
+    stroke-dashoffset: 347.76336669921875;
+    animation: line-anim 2s 2.2s ease forwards;
 }
 
 @keyframes line-anim {
-  100% {
-    stroke-dashoffset: 0;
-  }
+    100% {
+        stroke-dashoffset: 0;
+    }
 }
