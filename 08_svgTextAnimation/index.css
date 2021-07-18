@@ -25,6 +25,12 @@ body {
   50% {
     transform: translate3d(-50%, -50%, 0) scale(120%);
   }
+  56% {
+    transform: translate3d(-50%, -50%, 0) scale(120%);
+  }
+  62% {
+    transform: translate3d(-50%, -50%, 0) scale(110%);
+  }
   100% {
     transform: translate3d(-50%, -50%, 0) scale(2000%);
   }
