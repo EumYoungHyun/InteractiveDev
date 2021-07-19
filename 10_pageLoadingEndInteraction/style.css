@@ -3,3 +3,31 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+main {
+  font-family: "Zen Tokyo Zoo", cursive;
+}
+
+.landing {
+  min-height: 100vh;
+
+  background-image: url("./landing.png");
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+}
+
+.landing::after {
+  content: "";
+
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("./noise.gif");
+  background-position: center;
+  background-size: 4vh;
+  background-repeat: repeat;
+  opacity: 0.4;
+}
