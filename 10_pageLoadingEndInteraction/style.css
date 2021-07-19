@@ -7,13 +7,14 @@
 main {
   position: relative;
   font-family: "Zen Tokyo Zoo", cursive;
+  color: white;
   overflow-x: hidden;
 }
 
 .landing {
   min-height: 100vh;
 
-  background-image: url("./landing.png");
+  background-image: url("./landing.jpg");
   background-position: center;
   background-size: cover;
 
@@ -53,6 +54,12 @@ nav {
 .nav-links li {
   font-size: 1.2rem;
   font-weight: 700;
-  color: red;
+  color: wheat;
   padding-left: 10rem;
+}
+
+#logo {
+  font-family: "Lobster", cursive;
+  font-weight: lighter;
+  font-size: 2rem;
 }
