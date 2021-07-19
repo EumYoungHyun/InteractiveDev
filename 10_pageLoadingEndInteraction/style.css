@@ -5,7 +5,9 @@
 }
 
 main {
+  position: relative;
   font-family: "Zen Tokyo Zoo", cursive;
+  overflow-x: hidden;
 }
 
 .landing {
@@ -14,6 +16,8 @@ main {
   background-image: url("./landing.png");
   background-position: center;
   background-size: cover;
+
+  padding: 0rem 5rem;
   z-index: -1;
 }
 
@@ -29,5 +33,26 @@ main {
   background-position: center;
   background-size: 4vh;
   background-repeat: repeat;
+
   opacity: 0.4;
+  overflow: hidden;
+}
+
+nav {
+  min-height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: red;
+  padding-left: 10rem;
 }
