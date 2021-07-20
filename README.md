@@ -1,4 +1,4 @@
 # InteractiveDev
 
-Study Hard Make
-Better Works
+Study Hard   
+Make Better Works
