@@ -39,6 +39,10 @@
                 scannedData[i] = averageColorValue;
                 scannedData[i + 1] = averageColorValue;
                 scannedData[i + 2] = averageColorValue;
+            } else {
+                scannedData[i] = 255 - scannedData[i];
+                scannedData[i + 1] = 255 - scannedData[i + 1];
+                scannedData[i + 2] = 255 - scannedData[i + 2];
             }
         }
         scannedImage.data = scannedData;
