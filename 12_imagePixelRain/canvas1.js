@@ -55,7 +55,7 @@
                 this.positionX = Math.floor(this.y);
                 this.positionY = Math.floor(this.x);
                 this.speed = mappedImage[this.positionX][this.positionY][0];
-                let movement = 2.5 - this.speed + this.velocity;
+                let movement = 3.5 - this.speed + this.velocity;
 
                 this.y += movement;
                 if (this.y >= canvas.height) {
