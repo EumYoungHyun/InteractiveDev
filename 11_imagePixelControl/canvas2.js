@@ -53,8 +53,8 @@
                 let force = (maxDistance - distance) / maxDistance;
                 if (force < 0) force = 0;
 
-                let directionX = forceDirectionX * force * this.density * 0.6;
-                let directionY = forceDirectionY * force * this.density * 0.6;
+                let directionX = forceDirectionX * force * this.density;
+                let directionY = forceDirectionY * force * this.density;
 
                 if (distance < mouse.radius + this.size) {
                     this.x -= directionX;
