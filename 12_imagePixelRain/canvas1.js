@@ -9,17 +9,14 @@
         canvas.width = 683;
         canvas.height = 1024;
 
-        context.drawImage(image, 0, 0, canvas.width, canvas.height);
-
         let particlesArray = [];
         const NUMBER_OF_PARTICLES = 5000;
-
         class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = 0;
                 this.speed = 0;
-                this.velocity = Math.random() * 0.5;
+                this.velocity = Math.random() * 3.5;
                 this.size = Math.random() * 1.5 + 1;
             }
 
@@ -34,8 +31,29 @@
             draw() {
                 context.beginPath();
                 context.fillStyle = "white";
-                context.arc(this.x, this.y, this.size, 0, Math.Pi * 2);
+                context.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                context.fill();
             }
         }
+        function init() {
+            for (let i = 0; i < NUMBER_OF_PARTICLES; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+        init();
+
+        function animate() {
+            context.drawImage(image, 0, 0, canvas.width, canvas.height);
+            context.globalAlpha = 0.05;
+            context.fillStyle = "rgb(0, 0, 0)";
+            context.fillRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < NUMBER_OF_PARTICLES; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            requestAnimationFrame(animate);
+        }
+        animate();
     });
 })();
