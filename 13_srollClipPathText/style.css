@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+* {
+    font-family: "Lobster", cursive;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+section div {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    color: #3b48ff;
+    background-color: #070707;
+}
+
+section div:nth-child(2) {
+    color: #070707;
+    background-color: #3b48ff;
+
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 0);
+}
+
+section div h2 {
+    position: absolute;
+    left: 0;
+
+    font-size: 5rem;
+    line-height: 100vh;
+    white-space: nowrap;
+
+    animation: flowText 200s linear forwards;
+
+    cursor: default;
+}
+
+section div:nth-child(2) h2 {
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: #070707;
+    color: #c170e0;
+}
+
+@keyframes flowText {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
