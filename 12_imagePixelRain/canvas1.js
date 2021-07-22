@@ -60,8 +60,8 @@
         let movement = 3.5 - this.speed + this.velocity;
 
         this.angle++;
-        this.y += (movement + Math.sin(this.angle)) / 10;
-        this.x += movement + Math.sin(this.angle) / 10;
+        this.y += (movement + Math.sin(this.angle)) / 1500;
+        this.x += (movement + Math.sin(this.angle)) / 1500;
         this.y += movement;
         this.x += movement;
         if (this.x >= canvas.width) {
@@ -98,7 +98,7 @@
 
       for (let i = 0; i < NUMBER_OF_PARTICLES; i++) {
         particlesArray[i].update();
-        context.globalAlpha = particlesArray[i].speed * 0.04;
+        context.globalAlpha = particlesArray[i].speed * 0.3;
         particlesArray[i].draw();
       }
       requestAnimationFrame(animate);
