@@ -1,0 +1,14 @@
+#logo {
+  position: relative;
+  animation: wiggle 1s linear infinite;
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(0.9, 1.1);
+  }
+}
