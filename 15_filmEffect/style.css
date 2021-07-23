@@ -1,0 +1,54 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+.background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(ellipse at center, #131313 0%, #171771 100%);
+}
+
+.grain-img {
+    opacity: 0.9;
+    z-index: -1;
+}
+
+.background::after {
+    content: "";
+    width: 200vw;
+    height: 200vh;
+
+    position: absolute;
+    top: -50%;
+    left: -50%;
+
+    background-image: var(--imageUrl);
+    transform: translate3d(-50%, -50%, 0);
+    animation: grain 1.5s steps(6) infinite;
+    opacity: 0.3;
+}
+@keyframes grain {
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+    10% {
+        transform: translate(-5%, -3%);
+    }
+    30% {
+        transform: translate(1%, -2%);
+    }
+    50% {
+        transform: translate(1%, 0%);
+    }
+    70% {
+        transform: translate(3%, 2%);
+    }
+    90% {
+        transform: translate(1%, 3%);
+    }
+}
