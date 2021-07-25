@@ -165,6 +165,10 @@ class App {
   onClick(e) {
     this.context.clearRect(0, 0, this.stageWidth, this.stageHeight);
 
+    for (let i = 0; i < this.dots.length; i++) {
+      this.dots[i].reset();
+    }
+
     this.context.drawImage(
       this.image,
       0,
