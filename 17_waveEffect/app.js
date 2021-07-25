@@ -1,3 +1,5 @@
+import { Ripple } from "./ripple.js";
+
 class App {
   constructor() {
     this.canvas = document.createElement("canvas");
@@ -5,6 +7,9 @@ class App {
     this.context = this.canvas.getContext("2d");
 
     this.pixelRatio = window.devicePixelRatio >= 1.5 ? 2 : 1;
+
+    this.ripple = new Ripple();
+
     window.addEventListener("resize", this.resize.bind(this), false);
     this.resize();
 
@@ -22,6 +27,9 @@ class App {
       this.isLoaded = true;
       this.drawImage();
     };
+
+    window.requestAnimationFrame(this.animate.bind(this));
+    this.canvas.addEventListener("click", this.onClick.bind(this), false);
   }
   resize() {
     this.stageWidth = document.body.clientWidth;
@@ -31,6 +39,7 @@ class App {
     this.canvas.height = this.stageHeight * this.pixelRatio;
     this.context.scale(this.pixelRatio, this.pixelRatio);
 
+    this.ripple.resize(this.stageWidth, this.stageHeight);
     if (this.isLoaded) {
       this.drawImage();
     }
@@ -71,8 +80,29 @@ class App {
       this.imagePosition.height
     );
   }
-}
+  animate() {
+    window.requestAnimationFrame(this.animate.bind(this));
+    this.ripple.animate(this.context);
+  }
 
+  onClick(e) {
+    this.context.clearRect(0, 0, this.stageWidth, this.stageHeight);
+
+    this.context.drawImage(
+      this.image,
+      0,
+      0,
+      this.image.width,
+      this.image.height,
+      this.imagePosition.x,
+      this.imagePosition.y,
+      this.imagePosition.width,
+      this.imagePosition.height
+    );
+
+    this.ripple.start(e.offsetX, e.offsetY);
+  }
+}
 window.onload = () => {
   new App();
 };
