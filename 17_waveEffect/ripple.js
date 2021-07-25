@@ -6,7 +6,7 @@ export class Ripple {
     this.y = 0;
     this.radius = 0;
     this.maxRadius = 0;
-    this.speed = 5;
+    this.speed = 7;
   }
 
   resize(stageWidth, stageHeight) {
@@ -21,15 +21,10 @@ export class Ripple {
     this.maxRadius = this.getMax(x, y);
   }
 
-  animate(context) {
+  animate() {
     if (this.radius < this.maxRadius) {
       this.radius += this.speed;
     }
-
-    context.beginPath();
-    context.fillStyle = "#00ff00";
-    context.arc(this.x, this.y, this.radius, Math.PI * 2, false);
-    context.fill();
   }
 
   getMax(x, y) {

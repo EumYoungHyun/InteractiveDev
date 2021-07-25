@@ -15,8 +15,8 @@ class App {
 
     this.ripple = new Ripple();
 
-    this.radius = 10;
-    this.pixelSize = 30;
+    this.radius = 7;
+    this.pixelSize = 20;
     this.dots = [];
 
     window.addEventListener("resize", this.resize.bind(this), false);
@@ -110,6 +110,7 @@ class App {
       this.stageWidth,
       this.stageHeight
     );
+
     this.drawDots();
   }
 
@@ -127,10 +128,10 @@ class App {
         const x = (j + 0.5) * this.pixelSize;
         const pixelX = Math.max(Math.min(x, this.stageWidth), 0);
 
-        const pixexIndex = pixelX * pixelY * this.stageWidth * 4;
-        const red = this.imgData.data[pixexIndex + 0];
-        const green = this.imgData.data[pixexIndex + 1];
-        const blue = this.imgData.data[pixexIndex + 2];
+        const pixelIndex = (pixelX + pixelY * this.stageWidth) * 4;
+        const red = this.imgData.data[pixelIndex + 0];
+        const green = this.imgData.data[pixelIndex + 1];
+        const blue = this.imgData.data[pixelIndex + 2];
 
         const dot = new Dot(
           x,
@@ -149,7 +150,7 @@ class App {
 
   animate() {
     window.requestAnimationFrame(this.animate.bind(this));
-    this.ripple.animate(this.context);
+    this.ripple.animate();
 
     for (let i = 0; i < this.dots.length; i++) {
       const dot = this.dots[i];
@@ -164,7 +165,6 @@ class App {
   onClick(e) {
     this.context.clearRect(0, 0, this.stageWidth, this.stageHeight);
 
-    // this.dot = new Dot(e.offsetX, e.offsetY, 3, 10, 200, 120, 20);
     this.context.drawImage(
       this.image,
       0,
