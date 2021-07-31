@@ -1,8 +1,5 @@
 
 export class Text {
-    canvas: HTMLCanvasElement;
-    ctx: CanvasRenderingContext2D
-
     constructor() {
         this.canvas = document.createElement('canvas');
         this.canvas.style.position = "absolute";
@@ -13,7 +10,7 @@ export class Text {
         this.ctx = this.canvas.getContext('2d');
     }
 
-    setText({ str, density, stageWidth, stageHeight }: setTextIState) {
+    setText(str, density, stageWidth, stageHeight) {
         this.canvas.width = stageWidth
         this.canvas.height = stageHeight
 
@@ -36,10 +33,10 @@ export class Text {
             ((stageHeight - fontSize)) / 2
         )
 
-        return this.dotPos({ density, stageWidth, stageHeight });
+        return this.dotPos( density, stageWidth, stageHeight );
     }
 
-    dotPos({ density, stageWidth, stageHeight }: dotIState) {
+    dotPos( density, stageWidth, stageHeight ) {
         const imageData = this.ctx.getImageData(
             0, 0,
             stageWidth, stageHeight
@@ -59,19 +56,22 @@ export class Text {
             }
 
             for (let width = 0; width < stageWidth; width += density) {
-
-
+                pixel = imageData[((width + (height * stageWidth)) * 4) - 1];
+                if (
+                    pixel !== 0 &&
+                    width > 0 &&
+                    width < stageWidth &&
+                    height > 0 &&
+                    height < stageHeight
+                ) {
+                    particles.push({
+                        x: width,
+                        y: height
+                    })
+                }
             }
         }
+        return particles;
     }
 }
 
-interface dotIState {
-    density: number;
-    stageWidth: number;
-    stageHeight: number;
-
-}
-interface setTextIState extends dotIState {
-    str: string;
-}

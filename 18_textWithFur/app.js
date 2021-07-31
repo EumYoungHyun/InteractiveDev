@@ -1,5 +1,4 @@
-import WebFont from 'webfontloader';
-
+import { Text } from './test.js'
 class App {
     constructor() {
         WebFont.load({
@@ -7,7 +6,12 @@ class App {
                 families: ['Droid Sans', 'Droid Serif']
             },
             fontactive: () => {
-
+                this.text = new Text();
+                this.text.setText(
+                    'A', 2,
+                    document.body.clientWidth,
+                    document.body.clientHeight
+                )
             }
         });
     }
