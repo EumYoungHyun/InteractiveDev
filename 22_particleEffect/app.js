@@ -12,3 +12,16 @@ function resize() {
   canvas.width = stageWidth * pixelRatio;
   canvas.height = stageHeight * pixelRatio;
 }
+
+let particlesArray;
+
+let mouse = {
+  x: null,
+  y: null,
+  radius: (canvas.height / 80) * (canvas.width / 80),
+};
+
+window.addEventListener("mousemove", (e) => {
+  mouse.x = e.x;
+  mouse.y = e.y;
+});
