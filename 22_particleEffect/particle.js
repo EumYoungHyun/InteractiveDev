@@ -45,5 +45,9 @@ class Particle {
         this.y -= 10;
       }
     }
+
+    this.x += this.directionX;
+    this.y += this.directionY;
+    this.draw();
   }
 }
