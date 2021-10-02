@@ -62,16 +62,16 @@ class Particle {
     if (distance < mouse.radius + this.size) {
       console.log(distance, mouse.x, mouse.y);
       if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
-        this.x += 10;
+        this.x += 3;
       }
       if (mouse.x > this.x && this.x > this.size * 10) {
-        this.x -= 10;
+        this.x -= 3;
       }
       if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
-        this.y += 10;
+        this.y += 3;
       }
       if (mouse.y > this.y && this.y > this.size * 10) {
-        this.y -= 10;
+        this.y -= 3;
       }
     }
     this.x += this.directionX;
@@ -126,6 +126,10 @@ function connect() {
     }
   }
 }
+window.addEventListener("mouseout", () => {
+  mouse.x = undefined;
+  mouse.y = undefined;
+});
 
 init();
 animate();
