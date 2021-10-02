@@ -115,8 +115,10 @@ function connect() {
       let dy = particlesArray[i].y - particlesArray[j].y;
       let distance = dx * dx + dy * dy;
 
-      if (distance < (canvas.width / 15) * (canvas.height / 15)) {
-        ctx.strokeStyle = "rgba(140,85,31,1)";
+      if (distance < (canvas.width / 10) * (canvas.height / 10)) {
+        ctx.strokeStyle = `rgba(140,85,31,${
+          1 - distance / ((canvas.width / 10) * (canvas.height / 10))
+        })`;
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
