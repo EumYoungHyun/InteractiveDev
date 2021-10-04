@@ -11,34 +11,34 @@ class App {
     this.ctx = this.canvas.getContext("2d");
     this.imageCtx = this.imageCanvas.getContext("2d");
 
-    const image = new Image();
-    image.src = "image.jpg";
-    image.onload = () => {
-      //TODO: canvas 이미지 저하 해결
-      this.imageCtx.drawImage(
-        image,
-        0,
-        0,
-        this.imageCanvas.width,
-        this.imageCanvas.height
-      );
-      window.addEventListener("resize", this.resize.bind(this), false);
-      this.resize();
-    };
-
     this.pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
-
-    this.thumbs = [];
+    window.addEventListener("resize", this.resize.bind(this), false);
+    this.resize();
   }
 
   resize() {
-    console.log("on resize");
     this.stageWidth = document.body.clientWidth;
     this.stageHeight = document.body.clientHeight;
 
     this.canvas.width = this.stageWidth * this.pixelRatio;
     this.canvas.height = this.stageHeight * this.pixelRatio;
+    this.imageCanvas.width = this.stageWidth * this.pixelRatio;
+    this.imageCanvas.height = this.stageHeight * this.pixelRatio;
+
     this.ctx.scale(this.pixelRatio, this.pixelRatio);
+    this.imageCtx.scale(this.pixelRatio, this.pixelRatio);
+
+    const image = new Image();
+    image.src = "image.jpg";
+    image.onload = () => {
+      this.imageCtx.drawImage(
+        image,
+        0,
+        0,
+        window.innerWidth,
+        window.innerHeight
+      );
+    };
   }
 }
 
