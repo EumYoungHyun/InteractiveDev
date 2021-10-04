@@ -14,16 +14,16 @@ class App {
     const image = new Image();
     image.src = "image.jpg";
     image.onload = () => {
-      console.log(image.width, image.height);
       //TODO: canvas 이미지 저하 해결
       this.imageCtx.drawImage(
         image,
         0,
         0,
         this.imageCanvas.width,
-        this.imageCanvas.height / 2
+        this.imageCanvas.height
       );
-      console.log(this.imageCanvas.width, this.imageCanvas.height);
+      window.addEventListener("resize", this.resize.bind(this), false);
+      this.resize();
     };
 
     this.pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
@@ -32,6 +32,7 @@ class App {
   }
 
   resize() {
+    console.log("on resize");
     this.stageWidth = document.body.clientWidth;
     this.stageHeight = document.body.clientHeight;
 
