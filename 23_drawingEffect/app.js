@@ -12,6 +12,13 @@ class App {
     this.imageCtx = this.imageCanvas.getContext("2d");
 
     this.pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
+
+    const image = new Image();
+    image.src = "easel.jpg";
+    image.onload = () => {
+      this.ctx.drawImage(image, 0, 0, window.innerWidth, window.innerHeight);
+    };
+
     window.addEventListener("resize", this.resize.bind(this), false);
     this.resize();
   }
