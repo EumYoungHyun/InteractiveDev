@@ -19,7 +19,6 @@ section#loading_box {
     height: 10rem;
 
     margin: auto;
-    border: medium solid black;
 }
 
 section svg {
@@ -27,9 +26,40 @@ section svg {
     height: 100%;
 }
 
+@keyframes loading {
+    0%,
+    100% {
+        stroke-dashoffset: 401.47430419921875;
+        transform: rotate(0);
+    }
+    50% {
+        stroke-dashoffset: 0;
+        transform: rotate(180deg);
+    }
+    50.1% {
+        stroke-dashoffset: 802.47430419921875;
+        transform: rotate(180deg);
+    }
+}
+
 svg circle {
     width: 50%;
     height: 50%;
+
+    position: absolute;
+
     fill: none;
-    stroke: darkcyan;
+    stroke-width: 15px;
+    stroke-dasharray: 401.47430419921875;
+    stroke-dashoffset: 401.47430419921875;
+
+    transform-origin: 50% 50%;
+}
+svg circle:first-child {
+    stroke: black;
+    animation: loading 3s ease-in-out infinite;
+}
+svg circle:nth-child(2) {
+    stroke: darkgreen;
+    animation: loading 3s 1.5s ease-in-out infinite;
 }
