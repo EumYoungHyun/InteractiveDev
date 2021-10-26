@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section#loading_box {
+    width: 10rem;
+    height: 10rem;
+
+    margin: auto;
+    border: medium solid black;
+}
+
+section svg {
+    width: 100%;
+    height: 100%;
+}
+
+svg circle {
+    width: 50%;
+    height: 50%;
+    fill: none;
+    stroke: darkcyan;
+}
