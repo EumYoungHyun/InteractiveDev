@@ -38,7 +38,9 @@ section svg {
     }
     50.1% {
         stroke-dashoffset: 802.47430419921875;
-        transform: rotate(180deg);
+    }
+    99.9% {
+        transform: rotate(360deg);
     }
 }
 
